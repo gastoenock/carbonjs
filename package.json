@@ -1,0 +1,35 @@
+{
+  "name": "jscarbon",
+  "version": "1.0.0",
+  "description": " A simple Javascript Package as an extension of Javascript Date object.",
+  "main": "./index.js",
+  "module": "./index.mjs",
+  "types": "./index.d.ts",
+  "type": "module",
+  "exports": {
+    "import": "./index.js",
+    "require": "./index.cjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gastoenock/carbonjs.git"
+  },
+  "scripts": {
+    "dev": "tsup  src/index.js",
+    "watch": "tsc -w",
+    "test": "node ./src/test.js"
+  },
+  "keywords": [
+    "Javascript carbon",
+    "Carbon in javascript",
+    "Date manipulation library in Javacript",
+    "Javascript time"
+  ],
+  "author": "Gasto Enock",
+  "license": "MIT",
+  "devDependencies": {
+    "rollup": "^4.24.4",
+    "tsup": "^8.2.4",
+    "typescript": "^5.5.4"
+  }
+}
