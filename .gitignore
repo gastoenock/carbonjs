@@ -1,5 +1,5 @@
-./src
-./node_modules
-
+node_modules/
+dist/
+*.tgz
 .env
 .DS_Store

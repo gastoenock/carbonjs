@@ -2,22 +2,27 @@
   "name": "jscarbon",
   "version": "1.0.0",
   "description": " A simple Javascript Package as an extension of Javascript Date object.",
-  "main": "./index.js",
-  "module": "./index.mjs",
-  "types": "./index.d.ts",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
   "type": "module",
   "exports": {
-    "import": "./index.js",
-    "require": "./index.cjs"
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./browser": "./dist/carbon.global.js",
+    "./package.json": "./package.json"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/gastoenock/carbonjs.git"
   },
   "scripts": {
-    "dev": "tsup  src/index.js",
-    "watch": "tsc -w",
-    "test": "node ./src/test.js"
+    "build": "node -e \"require('node:fs').rmSync('dist',{recursive:true,force:true})\" && tsup",
+    "dev": "tsup --watch",
+    "watch": "tsup --watch",
+    "prepack": "npm run build",
+    "test": "npm run build && node --experimental-vm-modules --test tests/*.test.js"
   },
   "keywords": [
     "Javascript carbon",
@@ -31,5 +36,14 @@
     "rollup": "^4.24.4",
     "tsup": "^8.2.4",
     "typescript": "^5.5.4"
-  }
+  },
+  "browser": "./dist/index.js",
+  "files": [
+    "dist",
+    "index.js",
+    "src/index.js",
+    "src/Carbon.js",
+    "src/Helper.js"
+  ],
+  "sideEffects": false
 }
