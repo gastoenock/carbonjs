@@ -11,7 +11,7 @@ import {
 class Carbon  {
     #now = new Date(Date.now());
 
-    constructor(year = 0, month = 0, day = 0, hours = 0, minutes = 0, seconds = 0, milliseconds = 0, timeZone=null, time, dateTime = new Date(Date.UTC(this.#now.getFullYear(), this.#now(), this.#now.getDate(), this.#now.getHours(), this.#now.getMinutes(), this.#now.getSeconds(), this.#now.getMilliseconds()))) {
+    constructor(year = 0, month = 0, day = 0, hours = 0, minutes = 0, seconds = 0, milliseconds = 0, timeZone=null, time, dateTime = new Date()) {
         this._year = year || dateTime.getFullYear() 
         this._month = month || dateTime.getMonth()
         this._date = day || dateTime.getDate();
